@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kadai2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="/">TOP</a></li>
+        <li><a href="/blogs">blog一覧</a></li>
+        <li><a href="/blogs/new">新規作成</a></li>
+      </ul>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>まはる</p>
+    </footer>
+  </body>
+</html>
