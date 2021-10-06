@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts
   get 'sessions/new'
   root to: 'tops#index'
   get '/blogs', to: 'blogs#index'
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
