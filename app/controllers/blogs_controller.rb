@@ -7,7 +7,11 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = Blog.new
+    if params[:back]
+      @blog = Blog.new(blog_params)
+    else
+      @blog = Blog.new
+    end
   end
 
   def create
@@ -52,7 +56,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :image, :image_cache)
   end
 
   def set_blog
