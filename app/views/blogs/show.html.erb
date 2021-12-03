@@ -2,7 +2,10 @@
 <p>投稿者: <%= @blog.user.name %></p>
 <p>タイトル: <%= @blog.title %></p>
 <p>内容: <%= @blog.content %>
-        <%= image_tag @blog.image.url %></p>
+        <% if  @blog.image.url.nil? %>
+        <% else %>
+          <%= image_tag @blog.image.url %>
+        <% end %></p>
 <% unless @blog.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>

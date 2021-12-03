@@ -4,7 +4,9 @@
 
 <table>
 
-<h1><%= @user.name %>のお気に入りブログ</h1>
+
+
+<h2><%= @user.name %>のお気に入りブログ</h2>
   <tr>
     <th>投稿者</th>
     <th>タイトル</th>
@@ -20,4 +22,20 @@
     </tr>
     <% end %>
 
+
+
 </table>
+
+<h1><%= @user.name %>のフォロー</h1>
+    <% @user.following.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+
+<h1><%= @user.name %>のフォロワーユーザー</h1>
+    <% @user.followers.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
